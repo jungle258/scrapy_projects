@@ -12,6 +12,10 @@ class TencentjobSpider(CrawlSpider):
     name = 'tencentJob'
     allowed_domains = ['hr.tencent.com']
     start_urls = ['http://hr.tencent.com/position.php?&start=0']
+    # 指定处理的管道
+    custom_settings = {
+        'ITEM_PIPELINES': {'tencent.pipelines.TencentPipeline': 300},
+    }
 
     # 初始化链接提取匹配'http://hr.tencent.com/position.php?&start=\d+'的链接
     page_lx = LinkExtractor(allow=('start=\d+'))
@@ -20,6 +24,7 @@ class TencentjobSpider(CrawlSpider):
     rules = [
         Rule(page_lx, callback='parse_content', follow=True)
     ]
+
 
     # 不能使用parse来作为解析方法，因为crawlspider依靠spider的parse来实现逻辑，覆盖了parse方法crawlspider会运行失败
 

@@ -18,3 +18,12 @@ class TencentItem(scrapy.Item):
     publish_time = scrapy.Field()
 
 
+class SunDongguanItem(scrapy.Item):
+
+    id = scrapy.Field()
+    title = scrapy.Field()
+    target = scrapy.Field()
+    info_link = scrapy.Field()
+    state = scrapy.Field()
+    person = scrapy.Field()
+    time = scrapy.Field()

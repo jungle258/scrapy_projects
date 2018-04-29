@@ -68,6 +68,8 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'tencent.pipelines.TencentPipeline': 300,
+
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,4 +96,12 @@ ITEM_PIPELINES = {
 # log 信息设置
 # log输出到文件
 # LOG_FILE = 'TencentJob.log'
-LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
+
+
+# Mysql 数据库相关设置
+MYSQL_HOST = '127.0.0.1'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '123456'
+MYSQL_PORT = 3306
+MYSQL_DB = 'scrapydb'
